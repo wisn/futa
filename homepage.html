@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="id">
+	<head>
+		<title>
+			<%BlogTitle%>
+		</title>
+		<base href="<%BlogUrl%>">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+		<link rel="stylesheet" href="<%CSSUrl%>">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="<%RDFUrl%>">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="<%RSDUrl%>">
+		<link rel="contents" href="<%SiteMapUrl%>">
+	  <meta name="description" content="<%BlogDescription%>">
+		<meta name="author" content="<%ProfileName%>">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>
+							<a href="/" id="headerTitle">
+								<%BlogTitle%>
+							</a>
+					  </h1>
+						<nav class="links">
+							<ul>
+								<li><a href="">Beranda</a></li>
+								<li><a href="album">Album</a></li>
+								<li><a href="sitemap">Peta Situs</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Cari</a>
+									<form id="search" method="get" action="search.php">
+										<input type="text" name="search" placeholder="Cari" />
+									</form>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<IndexEntrysLoop>
+								<%TrackBackAutoDiscovery%>
+								<article class="post">
+									<header>
+										<div class="title">
+											<h2>
+												<a href="<%EntryPermalink%>">
+													<%EntryTitle%>
+												</a>
+											</h2>
+										</div>
+										<div class="meta">
+											<time class="published" datetime="<%EntryDateYear4%>-<%EntryDateMonth2%>-<%EntryDateDay2%>">
+												<%EntryDateDay%> <%EntryDateMonthEn%> <%EntryDateYear%>
+											</time>
+											<a href="javascript:;" class="author">
+												<span class="name">
+													<%EntryAuthor%>
+												</span>
+												<img src="<%ProfileImage%>" alt="" />
+											</a>
+										</div>
+									</header>
+									<a href="<%EntryPermalink%>" class="image featured"><img src="<%EntryImgOriginal%>" alt="" /></a>
+									<p>
+										<%EntryBodyNoTag%>
+									</p>
+									<footer>
+										<ul class="actions">
+											<li><a href="<%EntryPermalink%>" class="button big">Lanjutkan Membaca</a></li>
+										</ul>
+										<ul class="stats">
+											<IfEntryCategory>
+												<li>
+													<a href="<%EntryCategoryUrl%>">
+														<%EntryCategory%>
+													</a>
+												</li>
+											</IfEntryCategory>
+											<li>
+												<a href="<%EntryPermalink%>" class="icon fa-comment">
+													<%EntryCommentCount%>
+												</a>
+											</li>
+										</ul>
+									</footer>
+								</article>
+							</IndexEntrysLoop>
+
+						<!-- Pagination -->
+							<ul class="actions pagination">
+								<IfPrevPage>
+									<li><a href="<%PrevPage%>" class="button big previous">Sebelumnya</a></li>
+								</IfPrevPage>
+								<IfNextPage>
+									<li><a href="<%NextPage%>" class="button big next">Berikutnya</a></li>
+								</IfNextPage>
+							</ul>
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="" class="logo"><img src="<%ProfileImage%>" alt="" /></a>
+								<header>
+									<h2>
+										<%BlogTitle%>
+									</h2>
+									<p>
+										<%BlogDescription%>
+									</p>
+								</header>
+							</section>
+
+						<!-- Footer -->
+							<section id="footer">
+								<ul class="icons">
+									<li><a href="javascript:;" class="fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="javascript:;" class="fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="javascript:;" class="fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="javascript:;" class="fa-rss"><span class="label">RSS</span></a></li>
+									<li><a href="javascript:;" class="fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+								<p class="copyright">
+									&copy; <%BlogTitle%>.
+									Desain: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>.
+									Adaptasi oleh: <a href="https://www.nurcahyo.me/" target="_blank" rel="noopener noreferrer">Wisnu Adi Nurcahyo</a>.
+								</p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+			<script>
+				/**
+				 * Generate an indented list of links from a nav. Meant for use with panel().
+				 * @return {jQuery} jQuery object.
+				 */
+				!function(a){a.fn.navList=function(){var c=a(this);return $a=c.find("a"),b=[],$a.each(function(){var c=a(this),d=Math.max(0,c.parents("li").length-1),e=c.attr("href"),f=c.attr("target");b.push('<a class="link depth-'+d+'"'+("undefined"!=typeof f&&""!=f?' target="'+f+'"':"")+("undefined"!=typeof e&&""!=e?' href="'+e+'"':"")+'><span class="indent-'+d+'"></span>'+c.text()+"</a>")}),b.join("")},a.fn.panel=function(b){if(0==this.length)return d;if(this.length>1){for(var c=0;c<this.length;c++)a(this[c]).panel(b);return d}var h,d=a(this),e=a("body"),f=a(window),g=d.attr("id");return h=a.extend({delay:0,hideOnClick:!1,hideOnEscape:!1,hideOnSwipe:!1,resetScroll:!1,resetForms:!1,side:null,target:d,visibleClass:"visible"},b),"jQuery"!=typeof h.target&&(h.target=a(h.target)),d._hide=function(a){h.target.hasClass(h.visibleClass)&&(a&&(a.preventDefault(),a.stopPropagation()),h.target.removeClass(h.visibleClass),window.setTimeout(function(){h.resetScroll&&d.scrollTop(0),h.resetForms&&d.find("form").each(function(){this.reset()})},h.delay))},d.css("-ms-overflow-style","-ms-autohiding-scrollbar").css("-webkit-overflow-scrolling","touch"),h.hideOnClick&&(d.find("a").css("-webkit-tap-highlight-color","rgba(0,0,0,0)"),d.on("click","a",function(b){var c=a(this),e=c.attr("href"),f=c.attr("target");e&&"#"!=e&&""!=e&&e!="#"+g&&(b.preventDefault(),b.stopPropagation(),d._hide(),window.setTimeout(function(){"_blank"==f?window.open(e):window.location.href=e},h.delay+10))})),d.on("touchstart",function(a){d.touchPosX=a.originalEvent.touches[0].pageX,d.touchPosY=a.originalEvent.touches[0].pageY}),d.on("touchmove",function(a){if(null!==d.touchPosX&&null!==d.touchPosY){var b=d.touchPosX-a.originalEvent.touches[0].pageX,c=d.touchPosY-a.originalEvent.touches[0].pageY,e=d.outerHeight(),f=d.get(0).scrollHeight-d.scrollTop();if(h.hideOnSwipe){var g=!1,i=20,j=50;switch(h.side){case"left":g=c<i&&c>-1*i&&b>j;break;case"right":g=c<i&&c>-1*i&&b<-1*j;break;case"top":g=b<i&&b>-1*i&&c>j;break;case"bottom":g=b<i&&b>-1*i&&c<-1*j}if(g)return d.touchPosX=null,d.touchPosY=null,d._hide(),!1}(d.scrollTop()<0&&c<0||f>e-2&&f<e+2&&c>0)&&(a.preventDefault(),a.stopPropagation())}}),d.on("click touchend touchstart touchmove",function(a){a.stopPropagation()}),d.on("click",'a[href="#'+g+'"]',function(a){a.preventDefault(),a.stopPropagation(),h.target.removeClass(h.visibleClass)}),e.on("click touchend",function(a){d._hide(a)}),e.on("click",'a[href="#'+g+'"]',function(a){a.preventDefault(),a.stopPropagation(),h.target.toggleClass(h.visibleClass)}),h.hideOnEscape&&f.on("keydown",function(a){27==a.keyCode&&d._hide(a)}),d},a.fn.placeholder=function(){if("undefined"!=typeof document.createElement("input").placeholder)return a(this);if(0==this.length)return c;if(this.length>1){for(var b=0;b<this.length;b++)a(this[b]).placeholder();return c}var c=a(this);return c.find("input[type=text],textarea").each(function(){var b=a(this);""!=b.val()&&b.val()!=b.attr("placeholder")||b.addClass("polyfill-placeholder").val(b.attr("placeholder"))}).on("blur",function(){var b=a(this);b.attr("name").match(/-polyfill-field$/)||""==b.val()&&b.addClass("polyfill-placeholder").val(b.attr("placeholder"))}).on("focus",function(){var b=a(this);b.attr("name").match(/-polyfill-field$/)||b.val()==b.attr("placeholder")&&b.removeClass("polyfill-placeholder").val("")}),c.find("input[type=password]").each(function(){var b=a(this),c=a(a("<div>").append(b.clone()).remove().html().replace(/type="password"/i,'type="text"').replace(/type=password/i,"type=text"));""!=b.attr("id")&&c.attr("id",b.attr("id")+"-polyfill-field"),""!=b.attr("name")&&c.attr("name",b.attr("name")+"-polyfill-field"),c.addClass("polyfill-placeholder").val(c.attr("placeholder")).insertAfter(b),""==b.val()?b.hide():c.hide(),b.on("blur",function(a){a.preventDefault();var c=b.parent().find("input[name="+b.attr("name")+"-polyfill-field]");""==b.val()&&(b.hide(),c.show())}),c.on("focus",function(a){a.preventDefault();var b=c.parent().find("input[name="+c.attr("name").replace("-polyfill-field","")+"]");c.hide(),b.show().focus()}).on("keypress",function(a){a.preventDefault(),c.val("")})}),c.on("submit",function(){c.find("input[type=text],input[type=password],textarea").each(function(b){var c=a(this);c.attr("name").match(/-polyfill-field$/)&&c.attr("name",""),c.val()==c.attr("placeholder")&&(c.removeClass("polyfill-placeholder"),c.val(""))})}).on("reset",function(b){b.preventDefault(),c.find("select").val(a("option:first").val()),c.find("input,textarea").each(function(){var c,b=a(this);switch(b.removeClass("polyfill-placeholder"),this.type){case"submit":case"reset":break;case"password":b.val(b.attr("defaultValue")),c=b.parent().find("input[name="+b.attr("name")+"-polyfill-field]"),""==b.val()?(b.hide(),c.show()):(b.show(),c.hide());break;case"checkbox":case"radio":b.attr("checked",b.attr("defaultValue"));break;case"text":case"textarea":b.val(b.attr("defaultValue")),""==b.val()&&(b.addClass("polyfill-placeholder"),b.val(b.attr("placeholder")));break;default:b.val(b.attr("defaultValue"))}})}),c},a.prioritize=function(b,c){var d="__prioritize";"jQuery"!=typeof b&&(b=a(b)),b.each(function(){var e,b=a(this),f=b.parent();if(0!=f.length)if(b.data(d)){if(c)return;e=b.data(d),b.insertAfter(e),b.removeData(d)}else{if(!c)return;if(e=b.prev(),0==e.length)return;b.prependTo(f),b.data(d,e)}})}}(jQuery);
+			</script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script>
+				/*
+					Future Imperfect by HTML5 UP
+					html5up.net | @ajlkn
+					Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+				*/
+				!function(a){skel.breakpoints({xlarge:"(max-width: 1680px)",large:"(max-width: 1280px)",medium:"(max-width: 980px)",small:"(max-width: 736px)",xsmall:"(max-width: 480px)"}),a(function(){var b=a(window),c=a("body"),d=a("#menu"),e=a("#sidebar"),f=a("#main");c.addClass("is-loading"),b.on("load",function(){window.setTimeout(function(){c.removeClass("is-loading")},100)}),a("form").placeholder(),skel.on("+medium -medium",function(){a.prioritize(".important\\28 medium\\29",skel.breakpoint("medium").active)}),skel.vars.IEVersion<=9&&f.insertAfter(e),d.appendTo(c).panel({delay:500,hideOnClick:!0,hideOnSwipe:!0,resetScroll:!0,resetForms:!0,side:"right",target:c,visibleClass:"is-menu-visible"});var g=a("#search"),h=g.find("input");c.on("click",'[href="#search"]',function(a){a.preventDefault(),g.hasClass("visible")||(g[0].reset(),g.addClass("visible"),h.focus())}),h.on("keydown",function(a){27==a.keyCode&&h.blur()}).on("blur",function(){window.setTimeout(function(){g.removeClass("visible")},100)});var i=a("#intro");skel.on("+large",function(){i.prependTo(f)}).on("-large",function(){i.prependTo(e)})})}(jQuery);
+			</script>
+			<script>
+				$(document).ready(function() {
+					$('img[src="http://www.wagomu.id/img/no_entry_image.jpg"]').hide()
+					$('img[src="http://www.wagomu.id/img/no_entry_image.jpg"]').parent('.image').hide()
+				})
+			</script>
+
+	</body>
+</html>
