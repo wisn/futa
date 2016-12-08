@@ -1,11 +1,21 @@
 # Futa
-Modifikasi template Future Imperfect HTML5Up untuk WaGoMu.
+Modifikasi template Future Imperfect HTML5 Up untuk WaGoMu.
 
 Lihat [Demo](https://html5up.net/future-imperfect) oleh HTML5 Up.
 
 ## Fitur
 - *Responsive*
 - *Modern*
+
+## Berkas
+Semua dokumen yang diperlukan untuk *style sheet*, halaman utama, artikel terpisah, dan arsip ada di dalam:
+
+```
+- stylesheet.css
+- homepage.html
+- article.html
+- archive.html
+```
 
 ## Panduan Memasang
 Anda dapat memasang *template* ini langsung apabila telah terdaftar di Wagomu dengan memilihnya.
