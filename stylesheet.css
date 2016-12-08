@@ -2444,6 +2444,10 @@
 						margin-bottom: 0;
 					}
 
+	article.post img {
+		max-width: 100%;
+	}
+
 	dl {
 		margin: 0 0 2em 0;
 	}
