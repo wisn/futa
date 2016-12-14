@@ -2446,6 +2446,13 @@
 					}
 
 	article.post img {
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	article.post iframe {
+		display: block;
+		margin: 0 auto;
 		max-width: 100%;
 	}
 
